@@ -261,7 +261,7 @@
                     </a>
                   </div>
                 </div>
- -->
+  -->
                 <div class="col-md-6">
                   <div class="img-box">
                     <img src="images/slider-img.jpg" alt="">
@@ -271,7 +271,7 @@
             </div>
           </div>
         </div>
-        
+         
         <div class="carousel_btn-box">
           <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
             <img src="images/prev.png" alt="">
@@ -283,7 +283,7 @@
           </a>
         </div>
       </div>
- 
+  
     </section>
     <!-- end slider section -->
   </div>
@@ -678,35 +678,32 @@
       </div>
     </div>
 
-    
-    <?php
-    foreach($Testimonials as $Testimonial){
-      echo '
-      <div class="container px-0">
+    <div class="container px-0">
       <div id="customCarousel2" class="carousel  carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
-
-      <div class="carousel-item active">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
-                  <h5>
-                  Morijorch
-                  </h5>
-                  <h6>
-                    Default model text
-                  </h6>
-                </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
-              <p>
-                editors now use Lorem Ipsum as their default model text, and a search for "lorem ipsum" will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for "lorem ipsum" will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for "lorem ipsum" will uncover many web sites still in their infancy. Various
-              </p>
-            </div>
-          </div>
-      ';
-    }
-    ?>
+        <?php
+        $active = true; // Flag to track the active item
+        
+        foreach ($carouselItems as $index =>$item) {
+            $activeclass = $item['isActive'] ? 'active' : '';
+                echo '<div class="carousel-item ' .$activeclass . '">';
+                echo '<div class="box">';
+                echo '<div class="client_info">';
+                echo '<div class="client_name">';
+                echo '<h5>' . $item['client_name'] . '</h5>';
+                echo '<h6>' . $item['client_description'] . '</h6>';
+                echo '</div>';
+                echo '<i class="fa fa-quote-left" aria-hidden="true"></i>';
+                echo '</div>';
+                echo '<p>' . $item['testimonial'] . '</p>';
+                echo '</div>';
+                echo '</div>';
+                
+                $active = false; // Set active to false after the first active item
+            
+        }
+        ?>
+    </div>
 
 <!-- 
     <div class="container px-0">
@@ -732,7 +729,7 @@
             </div>
           </div>
 
- -->
+  -->
 <!-- 
           <div class="carousel-item">
             <div class="box">
